@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Hire</title>
+    <link rel="stylesheet" href="script_carHire.css">
+</head>
+<body>
+    <div class="header">
+                        
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="konyukalogo_rem.png" alt="Logo"></a>
+            </div>
+
+            <!-- Hamburger Menu Icon -->
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="menu"><img src="menu-line (1).png" alt="Menu Icon"></i>
+            </div>
+        
+            <ul class="nav-links">
+                <li><a href="script-home.html">Home</a></li>
+                <li><a href="script_about_us.html">About Us</a></li>
+                <li><a href="script_carHire.html">Car Hire</a></li>
+                <li><a href="script_faqs.html">FAQs</a></li>
+                <li><a href="script_contact.html">Contact Us</a></li>
+            </ul>
+        
+        </nav>
+    </div>
+
+    <h2 class="avail">OUR FLEET</h2>
+
+    <div class="cars-container">
+        <div class="car-card" data-images='["PradoTZG_side.png", "PradoTZG_front.png", "PradoTZG_int1.png", "PradoTZG_int3.png", "PradoTZG_int4.png", "PradoTZG_rear.png"]'>
+            <img class="car-image" src="PradoTZG_side.png" alt="Car1 Image">
+            <button class="prev-btn">&#8249;</button>
+            <button class="next-btn">&#8250;</button>
+            <h3>TOYOTA PRADO TX 2021</h3>
+            <p>Manual | Diesel | 7 Passengers | AWD</p>
+            <p>Price: Ksh12,000 /24hrs</p>
+            <p>Maintainance Due: 14/05/2025</p>
+            <button class="book-now-btn">Book Now</button>
+        </div>
+    
+        <div class="car-card" data-images='["redmazdaCX52.jpg", "CX5_int2.png", "CX5_int3.png", "CX5_rear.png"]'>
+            <img class="car-image" src="redmazdaCX52.jpg" alt="Car2 Image">
+            <button class="prev-btn">&#8249;</button>
+            <button class="next-btn">&#8250;</button>
+            <h3>MAZDA CX5 2020</h3>
+            <p>Automatic | Diesel | 5 Passengers | 4WD</p>
+            <p>Price: Ksh5,000 /24hrs</p>
+            <p>Maintainance Due: 10/06/2025</p>
+            <button class="book-now-btn">Book Now</button>
+        </div>
+    
+        <div class="car-card" data-images='["corolla_front.png", "corolla_interior.png", "corolla_side.png", "corolla_rear.png"]'>
+            <img class="car-image" src="corolla_front.png" alt="Car3 Image">
+            <button class="prev-btn">&#8249;</button>
+            <button class="next-btn">&#8250;</button>
+            <h3>COROLLA FIELDER 2019</h3>
+            <p>Automatic | Petrol | 5 Passengers | 2WD</p>
+            <p>Price: Ksh4,000 /24hrs</p>
+            <p>Maintainance Due: 06/07/2025</p>
+            <button class="book-now-btn">Book Now</button>
+        </div>
+    
+        <div class="car-card" data-images='["dodge_front.png", "dodge_frontSeat.png","dodge_dash.png", "dodge_side.png", "dodge_rear.png"]'>
+            <img class="car-image" src="dodge_front.png" alt="Car3 Image">
+            <button class="prev-btn">&#8249;</button>
+            <button class="next-btn">&#8250;</button>
+            <h3>DODGE CHARGER 3.6L V6 2016</h3>
+            <p>Automatic | Petrol | 5 Passengers | 4WD</p>
+            <p>Price: Ksh9,000 /24hrs</p>
+            <p>Maintainance Due: 30/04/2025</p>
+            <button class="book-now-btn">Book Now</button>
+        </div>
+    </div>
+
+    <!-- Booking Form Popup -->
+    <div class="booking-popup" id="booking-popup">
+        <div class="popup-content">
+            <span class="close-popup">&times;</span>
+            <h2>Book This Car</h2>
+            <form id="booking-form">
+                <input type="text" placeholder="First Name" required>
+                <input type="text" placeholder="Last Name" required>
+                <input type="tel" placeholder="Phone Number" required>
+                <input type="email" placeholder="Email" required>
+                <label>Pick-up Date:</label>
+                <input type="date" required>
+                <label>Drop-off Date:</label>
+                <input type="date" required>
+                <button type="submit">Confirm Booking</button>
+            </form>
+        </div>
+    </div>
+
+    <section class="newsletter">
+        <div class="newsletter-container">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Stay ahead with the latest updates, offers, and exclusive content.</p>
+    
+            <div class="newsletter-content">
+                <div class="newsletter-image">
+                    <img src="maillogorem.png" alt="Newsletter Icon">
+                </div>
+    
+                <form class="newsletter-form">
+                    <div class="input-group">
+                        <input type="text" placeholder="First Name*" required>
+                        <input type="text" placeholder="Last Name*" required>
+                    </div>
+                    <input type="email" placeholder="Enter your email*" required class="full-width">
+                    
+                    <button type="submit">
+                        Subscribe <img src="arrow-right-up-box-fill.png" alt="Send">
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-box">
+                <img src="konyukalogo_rem.png" alt="Konyuka Car Hire Logo" class="footer-logo">
+                <p>Leaders in corporate car hire  & fleet management solutions</p>
+                <div class="social-icons">
+                    <a href="#"><i class="facebook"><img src="facebook-fill.png" alt="facebook"></i></a>
+                    <a href="#"><i class="linkedin"><img src="linkedin-line.png" alt="linkedin"></i></a>
+                    <a href="#"><i class="instagram"><img src="instagram-line.png" alt="Instagram"></i></a>
+                    <a href="#"><i class="whatsap"><img src="whatsapp-line.png" alt="Whatsapp"></i></a>
+                    <a href="#"><i class="github"><img src="github-fill.png" alt="Github"></i></a>
+                </div>
+            </div>
+    
+            <div class="footer-box">
+                <h3>USEFUL LINKS</h3>
+                <ul>
+                    <li><a href="script-home.html">Home</a></li>
+                    <li><a href="script_carHire.html">Car Hire</a></li>
+                    <li><a href="script_about_us.html">About Us</a></li>
+                    <li><a href="script_contact.html">Contact Us</a></li>
+                    <li><a href="script_faqs.html">FAQs</a></li>
+                </ul>
+            </div>
+    
+            <div class="footer-box">
+                <h3>GET IN TOUCH</h3>
+                <div class="location">
+                    <h4>Nairobi</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Upper Hill - Opp Britam</p>
+                    <p><i class="fas fa-phone"></i> +254 755 612110 / +254 722 507670</p>
+                    <p><i class="fas fa-envelope"></i> info@konyukacarhire.com</p>
+                </div>
+    
+                <div class="location">
+                    <h4>Kisumu</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Obote Road - opp SGR Terminus</p>
+                    <p><i class="fas fa-phone"></i> +254 (0) 741 851 964</p>
+                    <p><i class="fas fa-envelope"></i> kisumu@konyukacarhire.com</p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="footer-bottom">
+            <p>© 2025 Konyuka Car Hire. All rights reserved</p>
+        </div>
+    </footer>
+    <script src="script_carHire.js"></script>
+</body>
+</html>

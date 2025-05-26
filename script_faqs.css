@@ -1,0 +1,537 @@
+/* General Reset */
+* {
+    overflow-x: hidden; /* Hides horizontal scroll */
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Header Section */
+.header {
+
+    min-height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(KONYUKA\ \(7\).png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* ===== Glassmorphic Navbar ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.15); /* More transparent */
+    padding: 15px 5%;
+    backdrop-filter: blur(12px); /* More blur for glass effect */
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Logo */
+.logo img {
+    width: 70px;
+    height: 80px;
+}
+
+/* Hamburger Menu Icon */
+.menu-toggle {
+    display: block; /* Ensure it's visible on small screens */
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 8px;
+    border-radius: 50%;
+    transition: background 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+}
+
+/* Hover Effect */
+.menu-toggle:hover {
+    background: rgba(0, 0, 0, 0.116);
+    transform: scale(1.1);
+}
+
+/* Active State */
+.menu-toggle.active {
+    background: rgba(255, 255, 255, 0.4);
+    transform: rotate(90deg);
+}
+
+/* Nav Links */
+.nav-links {
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li {
+    margin: 0 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s ease-in-out;
+}
+
+.nav-links a:hover {
+    color: #f31a1abb;
+}
+
+/* Default for large screens: Always visible */
+@media (min-width: 769px) {
+    .nav-links {
+        display: flex !important; /* Force display on large screens */
+        opacity: 1;
+        transform: none;
+        position: static; /* Keep inside navbar */
+        background: transparent; /* No need for background */
+        box-shadow: none;
+        pointer-events: auto;
+    }
+
+    .menu-toggle {
+        display: none; /* Hide hamburger on large screens */
+    }
+}
+
+/* Small Screens: Pop-up Navigation */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* Show hamburger icon */
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        padding: 8px;
+        border-radius: 50%;
+        transition: background 0.3s ease, transform 0.2s ease;
+        box-shadow: 0 4px 6px rgba(255, 255, 255, 0.2);
+    }
+
+    /* Hide nav links by default */
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Below navbar */
+        right: 10px;
+        background: rgba(255, 255, 255, 0.15);
+        backdrop-filter: blur(12px);
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        opacity: 0;
+        transform: scale(0.9);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        pointer-events: none;
+    }
+
+    /* Show menu when active */
+    .nav-links.active {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+    }
+}
+
+/* Quote & Login Buttons */
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.quote-btn {
+    background: linear-gradient(135deg, #ff4d4d, #ff0000);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.quote-btn:hover {
+    background: linear-gradient(135deg, #ff0000, #b30000);
+}
+
+.login-btn {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+
+/* FAQ Section Styling */
+.faq-section {
+    text-align: center;
+    padding: 50px 10%;
+    background: #fff;
+}
+
+.faq-section h1 {
+    color: #d60000;
+    font-size: 38px;
+    font-weight: bold;
+}
+
+.faq-section h2 {
+    color: #d60000;
+    font-size: 22px;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+/* FAQ Container */
+.faq-container {
+    margin-top: 20px;
+}
+
+/* FAQ Item */
+.faq {
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden;
+    transition: 0.3s ease-in-out;
+}
+
+/* FAQ Question */
+.faq-question {
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    background: #fff;
+    color: #d60000;
+    cursor: pointer;
+    position: relative;
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.faq-question:hover {
+    background: #d60000;
+    color: white;
+}
+
+/* Dropdown Arrow */
+.faq-question::before {
+    content: "▼";
+    position: absolute;
+    right: 20px;
+    transition: 0.3s ease-in-out;
+}
+
+/* FAQ Answer */
+.faq-answer {
+    max-height: 0;
+    padding: 0 15px;
+    font-size: 16px;
+    background: #fff;
+    color: #333;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out, padding 0.3s ease-in-out;
+}
+
+/* Expand Answer on Hover */
+.faq:hover .faq-answer {
+    max-height: 150px;
+    padding: 15px;
+}
+
+/*News letter*/
+/* Newsletter Section */
+.newsletter {
+    text-align: center;
+    padding: 100px 5%;
+    background: linear-gradient(135deg, #ffe3e3, #ffc1c1);
+    border-radius: 20px;
+}
+
+.newsletter-container {
+    max-width: 850px;
+    margin: auto;
+}
+
+.newsletter h2 {
+    color: #d60000;
+    font-size: 38px;
+    font-weight: bold;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.newsletter p {
+    font-size: 18px;
+    color: #444;
+    margin-bottom: 35px;
+}
+
+/* Layout for content */
+.newsletter-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+/* Newsletter Image */
+.newsletter-image img {
+    width: 170px;
+    animation: float 3s infinite ease-in-out;
+}
+
+/* Form Styling */
+.newsletter-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    width: 100%;
+    max-width: 500px;
+}
+
+/* Input Group */
+.input-group {
+    display: flex;
+    gap: 14px;
+}
+
+.input-group input,
+.full-width {
+    flex: 1;
+    padding: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 8px;
+    font-size: 17px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(8px);
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.input-group input::placeholder,
+.full-width::placeholder {
+    color: #555;
+}
+
+.input-group input:focus,
+.full-width:focus {
+    border-color: #d60000;
+    outline: none;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Subscribe Button */
+.newsletter-form button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #d60000;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 16px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0px 5px 15px rgba(214, 0, 0, 0.3);
+}
+
+.newsletter-form button img {
+    width: 18px;
+}
+
+.newsletter-form button:hover {
+    background: #a80000;
+    transform: translateY(-3px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .newsletter-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .input-group {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .newsletter-form {
+        align-items: center;
+    }
+
+    .full-width {
+        width: 100%;
+    }
+}
+
+/* Floating Animation */
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-5px); }
+    100% { transform: translateY(0px); }
+}
+
+
+/* Footer */
+/* Footer Styling */
+.footer {
+    background: rgba(0, 0, 0, 0.582); /* Slight transparency */
+    color: #fff;
+    padding: 50px 0;
+    font-family: Arial, sans-serif;
+    backdrop-filter: blur(10px); /* Glassmorphic blur effect */
+    -webkit-backdrop-filter: blur(10px);
+}
+
+/* Container for Responsive Layout */
+.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Footer Box Styling */
+.footer-box {
+    flex: 1;
+    padding: 20px;
+    min-width: 280px;
+    background: rgba(255, 255, 255, 0.014); /* Frosted glass effect */
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(143, 138, 138, 0.5);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    transition: 0.3s;
+}
+
+/* Hover effect */
+.footer-box:hover {
+    background: rgba(255, 255, 255, 0.068);
+}
+
+/* Footer Logo */
+.footer-logo {
+    width: 150px;
+    margin-bottom: 15px;
+}
+
+/* Headings */
+.footer-box h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Text & Links */
+.footer-box p, .footer-box ul {
+    font-size: 14px;
+}
+
+.footer-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-box ul li {
+    margin: 8px 0;
+}
+
+.footer-box ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer-box ul li a:hover {
+    text-decoration: underline;
+}
+
+/* Social Icons */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: white;
+    font-size: 18px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #D90429;
+}
+
+/* Contact Section */
+.location {
+    margin-top: 10px;
+}
+
+.location p {
+    margin: 5px 0;
+}
+
+.location i {
+    margin-right: 8px;
+    color: #D90429;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background: rgb(0, 0, 0);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .footer-box {
+        width: 90%;
+        margin-bottom: 20px;
+    }
+
+    .social-icons {
+        justify-content: center;
+    }
+}

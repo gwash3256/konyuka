@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+    <style>
+        /* General Reset */
+* {
+    overflow-x: hidden; /* Hides horizontal scroll */
+    margin: 0;
+    padding: 0;
+    box-sizing: content-box;
+    font-family: 'Poppins', sans-serif;
+}
+/* Header Section */
+.header {
+
+    min-height: 93vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.1)), url(KONYUKA\ \(7\).png);
+    background-size: cover;
+    background-position: center;
+}
+
+/* ===== Glassmorphic Navbar ===== */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background: rgba(255, 255, 255, 0.15); /* More transparent */
+    padding: 15px 5%;
+    backdrop-filter: blur(12px); /* More blur for glass effect */
+    -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    z-index: 1000;
+    border-radius: 15px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Logo */
+.logo img {
+    width: 70px;
+    height: 80px;
+}
+
+
+/* Quote & Login Buttons */
+.wrap {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.quote-btn {
+    background: linear-gradient(135deg, #ff4d4d, #ff0000);
+    color: white;
+    padding: 8px 15px;
+    border-radius: 25px;
+    transition: 0.3s ease;
+}
+
+.quote-btn:hover {
+    background: linear-gradient(135deg, #ff0000, #b30000);
+}
+
+.login-btn {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: 0.3s ease;
+}
+
+.login-btn:hover {
+    background: rgba(0, 0, 0, 0.9);
+}
+/* Footer Bottom */
+.footer-bottom {
+    text-align: center;
+    padding: 15px;
+    background: rgb(201, 181, 181);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+    </style>
+</head>
+<body>
+    <div class="header">
+                        
+        <nav class="navbar">
+            <h3>ADMIN </h3>
+            <div class="logo">
+                <a href="#"><img src="konyukalogo_rem.png" alt="Logo"></a>
+            </div>
+        
+            <div class="wrap">
+                <a href="script_login.html" class="login-btn">Login</a>
+                <a href="script_signup.html" class="quote-btn">Sing Up</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="footer-bottom">
+        <p>© 2025 Konyuka Car Hire. All rights reserved</p>
+    </div>
+
+</body>
+</html>

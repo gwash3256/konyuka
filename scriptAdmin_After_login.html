@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car Hire</title>
+    <link rel="stylesheet" href="scriptAdmin_After_Login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0Hhonpy0aDPbjIDqy00izQ7YOqiW6s9CQXFEbbKuqLg0DAXg7t2hsNPxjNKjpRERjCQ5OeKQ9iw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div class="header">
+        <nav class="navbar">
+            <div class="logo">
+                <a href="#"><img src="konyukalogo_rem.png" alt="Logo"></a>
+            </div>
+        </nav>
+    </div>
+
+    <h2 class="avail">FLEET</h2>
+
+    <div class="cars-container">
+        <div class="car-card" data-images='["PradoTZG_side.png", "PradoTZG_front.png", "PradoTZG_int1.png", "PradoTZG_int3.png", "PradoTZG_int4.png", "PradoTZG_rear.png"]' data-name="TOYOTA PRADO TX 2021" data-details="Manual | Diesel | 7 Passengers | AWD" data-price="Ksh12,000 /24hrs" data-maintenance="14/05/2025">
+            <img class="car-image" src="PradoTZG_side.png" alt="Car1 Image">
+            <div class="image-nav">
+                <button class="prev-btn">&#8249;</button>
+                <button class="next-btn">&#8250;</button>
+                <button class="edit-image-btn" data-car-index="0"><i class="fas fa-edit"></i></button>
+            </div>
+            <h3>TOYOTA PRADO TX 2021</h3>
+            <p>Manual | Diesel | 7 Passengers | AWD</p>
+            <p>Price: Ksh12,000 /24hrs</p>
+            <p>Maintainance Due: 14/05/2025</p>
+            <button class="edit-btn" data-car-index="0"><i class="fas fa-edit"></i></button>
+        </div>
+
+        <div class="car-card" data-images='["redmazdaCX52.jpg", "CX5_int2.png", "CX5_int3.png", "CX5_rear.png"]' data-name="MAZDA CX5 2020" data-details="Automatic | Diesel | 5 Passengers | 4WD" data-price="Ksh5,000 /24hrs" data-maintenance="10/06/2025">
+            <img class="car-image" src="redmazdaCX52.jpg" alt="Car2 Image">
+            <div class="image-nav">
+                <button class="prev-btn">&#8249;</button>
+                <button class="next-btn">&#8250;</button>
+                <button class="edit-image-btn" data-car-index="1"><i class="fas fa-edit"></i></button>
+            </div>
+            <h3>MAZDA CX5 2020</h3>
+            <p>Automatic | Diesel | 5 Passengers | 4WD</p>
+            <p>Price: Ksh5,000 /24hrs</p>
+            <p>Maintainance Due: 10/06/2025</p>
+            <button class="edit-btn" data-car-index="1"><i class="fas fa-edit"></i></button>
+        </div>
+
+        <div class="car-card" data-images='["corolla_front.png", "corolla_interior.png", "corolla_side.png", "corolla_rear.png"]' data-name="COROLLA FIELDER 2019" data-details="Automatic | Petrol | 5 Passengers | 2WD" data-price="Ksh4,000 /24hrs" data-maintenance="06/07/2025">
+            <img class="car-image" src="corolla_front.png" alt="Car3 Image">
+            <div class="image-nav">
+                <button class="prev-btn">&#8249;</button>
+                <button class="next-btn">&#8250;</button>
+                <button class="edit-image-btn" data-car-index="2"><i class="fas fa-edit"></i></button>
+            </div>
+            <h3>COROLLA FIELDER 2019</h3>
+            <p>Automatic | Petrol | 5 Passengers | 2WD</p>
+            <p>Price: Ksh4,000 /24hrs</p>
+            <p>Maintainance Due: 06/07/2025</p>
+            <button class="edit-btn" data-car-index="2"><i class="fas fa-edit"></i></button>
+        </div>
+
+        <div class="car-card" data-images='["dodge_front.png", "dodge_frontSeat.png","dodge_dash.png", "dodge_side.png", "dodge_rear.png"]' data-name="DODGE CHARGER 3.6L V6 2016" data-details="Automatic | Petrol | 5 Passengers | 4WD" data-price="Ksh9,000 /24hrs" data-maintenance="30/04/2025">
+            <img class="car-image" src="dodge_front.png" alt="Car3 Image">
+            <div class="image-nav">
+                <button class="prev-btn">&#8249;</button>
+                <button class="next-btn">&#8250;</button>
+                <button class="edit-image-btn" data-car-index="3"><i class="fas fa-edit"></i></button>
+            </div>
+            <h3>DODGE CHARGER 3.6L V6 2016</h3>
+            <p>Automatic | Petrol | 5 Passengers | 4WD</p>
+            <p>Price: Ksh9,000 /24hrs</p>
+            <p>Maintainance Due: 30/04/2025</p>
+            <button class="edit-btn" data-car-index="3"><i class="fas fa-edit"></i></button>
+        </div>
+    </div>
+
+    <div class="edit-modal" id="edit-modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2>Edit Car Details</h2>
+            <form id="edit-form">
+                <input type="hidden" id="car-index">
+                <input type="text" id="edit-name" placeholder="Car Name" required>
+                <textarea id="edit-details" placeholder="Details" required></textarea>
+                <input type="text" id="edit-price" placeholder="Price" required>
+                <input type="text" id="edit-maintenance" placeholder="Maintenance Due" required>
+                <button type="submit">Save Changes</button>
+            </form>
+        </div>
+    </div>
+
+    
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p>© 2025 Konyuka Car Hire. All rights reserved</p>
+        </div>
+    </footer>
+    <script src="scriptAdmin_After_login.js"></script>
+</body>
+</html>
